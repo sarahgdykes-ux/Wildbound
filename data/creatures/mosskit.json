@@ -1,0 +1,42 @@
+{
+  "species_id": "mosskit",
+  "name": "Mosskit",
+  "elements": ["nature"],
+  "role": "support",
+  "habitats": ["whispering_woods"],
+  "base_stats": {
+    "hp": 45,
+    "attack": 30,
+    "defense": 35,
+    "magic": 40,
+    "resistance": 35,
+    "speed": 55
+  },
+  "abilities": ["seedburst", "leaf_guard", "nature_boost"],
+  "taming_method": {
+    "type": "trust",
+    "requirements": {
+      "item": "forest_berries",
+      "approach": "patient"
+    }
+  },
+  "evolution_options": [
+    {
+      "target": "briarhorn",
+      "requirements": {
+        "environmental_affinity": {
+          "nature": 50
+        },
+        "level": 20
+      }
+    },
+    {
+      "target": "bloomveil",
+      "requirements": {
+        "relationship": 80,
+        "level": 20
+      }
+    }
+  ],
+  "rarity": "starter"
+}

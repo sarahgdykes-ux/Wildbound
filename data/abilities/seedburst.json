@@ -1,0 +1,16 @@
+{
+  "ability_id": "seedburst",
+  "name": "Seedburst",
+  "element": "nature",
+  "type": "special",
+  "power": 40,
+  "accuracy": 100,
+  "effects": [
+    {
+      "type": "damage",
+      "value": 40
+    }
+  ],
+  "cooldown": 0,
+  "description": "Launches a burst of seeds at the target."
+}

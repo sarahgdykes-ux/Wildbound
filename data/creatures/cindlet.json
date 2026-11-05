@@ -1,0 +1,44 @@
+{
+  "species_id": "cindlet",
+  "name": "Cindlet",
+  "elements": ["fire"],
+  "role": "attacker",
+  "habitats": ["whispering_woods", "emberfall"],
+  "base_stats": {
+    "hp": 40,
+    "attack": 55,
+    "defense": 30,
+    "magic": 35,
+    "resistance": 30,
+    "speed": 50
+  },
+  "abilities": ["ember_rush", "flame_shield", "heat_wave"],
+  "taming_method": {
+    "type": "battle",
+    "requirements": {
+      "win_challenge": true,
+      "demonstrate_strength": true
+    }
+  },
+  "evolution_options": [
+    {
+      "target": "scorchscale",
+      "requirements": {
+        "fire_victories": 20,
+        "environmental_affinity": {
+          "fire": 40
+        },
+        "level": 20
+      }
+    },
+    {
+      "target": "magmara",
+      "requirements": {
+        "hp_remaining_avg": 60,
+        "defeated_by_fire": 5,
+        "level": 20
+      }
+    }
+  ],
+  "rarity": "starter"
+}

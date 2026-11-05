@@ -1,0 +1,50 @@
+{
+  "region_id": "verdant_hollow",
+  "name": "Verdant Hollow",
+  "theme": "forest",
+  "description": "The starting region and first Wildbond mystery.",
+  "areas": [
+    {
+      "area_id": "bramblewick_village",
+      "name": "Bramblewick Village",
+      "purpose": "Starting settlement and hub"
+    },
+    {
+      "area_id": "whispering_woods",
+      "name": "Whispering Woods",
+      "purpose": "Introduction to exploration and taming"
+    },
+    {
+      "area_id": "stoneback_ridge",
+      "name": "Stoneback Ridge",
+      "purpose": "Environmental exploration abilities"
+    },
+    {
+      "area_id": "moonwater_glade",
+      "name": "Moonwater Glade",
+      "purpose": "Time-dependent encounters"
+    },
+    {
+      "area_id": "hollow_ruins",
+      "name": "The Hollow Ruins",
+      "purpose": "First major story discovery and boss"
+    }
+  ],
+  "creature_spawns": [
+    {
+      "species_id": "mosskit",
+      "areas": ["whispering_woods"],
+      "rarity": "starter"
+    },
+    {
+      "species_id": "cindlet",
+      "areas": ["whispering_woods"],
+      "rarity": "starter"
+    },
+    {
+      "species_id": "shroomble",
+      "areas": ["whispering_woods"],
+      "rarity": "common"
+    }
+  ]
+}

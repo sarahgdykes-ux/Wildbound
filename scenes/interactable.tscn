@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://e5f6g7h8i9j0"]
+
+[ext_resource type="Script" path="res://scripts/interactable.gd" id="1_interact"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_interact"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(64, 64)
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_interact")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_interact")
+
+[node name="TriggerArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="TriggerShape" type="CollisionShape2D" parent="TriggerArea"]
+shape = SubResource("RectangleShape2D_trigger")
+
+[node name="Sprite2D" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.8, 0.8, 0.3, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+offset_bottom = -20.0
+text = "Press E"
+horizontal_alignment = 1
+vertical_alignment = 1

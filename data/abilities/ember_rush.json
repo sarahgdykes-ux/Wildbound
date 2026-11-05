@@ -1,0 +1,16 @@
+{
+  "ability_id": "ember_rush",
+  "name": "Ember Rush",
+  "element": "fire",
+  "type": "physical",
+  "power": 50,
+  "accuracy": 100,
+  "effects": [
+    {
+      "type": "damage",
+      "value": 50
+    }
+  ],
+  "cooldown": 0,
+  "description": "Charges forward with blazing embers."
+}

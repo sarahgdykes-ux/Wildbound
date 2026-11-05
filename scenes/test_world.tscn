@@ -1,13 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3d4e5f6g7h8"]
+[gd_scene load_steps=5 format=3 uid="uid://c3d4e5f6g7h8"]
 
 [ext_resource type="PackedScene" uid="uid://b2k3l4m5n6o7" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://d4e5f6g7h8i9" path="res://scenes/wall.tscn" id="2_wall"]
+[ext_resource type="PackedScene" uid="uid://f6g7h8i9j0k1" path="res://scenes/npc.tscn" id="3_npc"]
+[ext_resource type="Script" path="res://scripts/test_world.gd" id="4_testworld"]
 
 [node name="TestWorld" type="Node2D"]
+script = ExtResource("4_testworld")
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
-position = Vector2(640, 360)
+position = Vector2(400, 360)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(640, 360)
+position = Vector2(400, 360)
 position_smoothing_enabled = true
 position_smoothing_speed = 5.0
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallTop" parent="Walls" instance=ExtResource("2_wall")]
+position = Vector2(640, 100)
+scale = Vector2(20, 1)
+
+[node name="WallBottom" parent="Walls" instance=ExtResource("2_wall")]
+position = Vector2(640, 620)
+scale = Vector2(20, 1)
+
+[node name="WallLeft" parent="Walls" instance=ExtResource("2_wall")]
+position = Vector2(100, 360)
+scale = Vector2(1, 10)
+
+[node name="WallRight" parent="Walls" instance=ExtResource("2_wall")]
+position = Vector2(1180, 360)
+scale = Vector2(1, 10)
+
+[node name="NPC" parent="." instance=ExtResource("3_npc")]
+position = Vector2(600, 360)
