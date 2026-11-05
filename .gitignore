@@ -1,8 +1,20 @@
-# Engine-specific files (to be updated after engine selection)
+# Engine-specific files
 # Godot
 .import/
 export/
-godot/*.tscn.cache
+*.ctex
+*.remap
+*.import
+*.godot/
+*.tmp
+# Godot editor settings
+editor_data-*.tres
+# Godot build cache
+.godot/
+# Godot mono specific (if using .NET)
+.mono/
+bin/
+obj/
 
 # GameMaker
 # (Add specific GameMaker ignores after selection)

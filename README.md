@@ -4,7 +4,7 @@ A top-down 2D fantasy adventure RPG featuring creature discovery, taming, and st
 
 ## Project Status
 
-**Pre-production** - Project foundation and structure being established.
+**Phase 1: Project Foundation** - Engine selected (Godot 4.x), project structure established, initial implementation in progress.
 
 ## Game Overview
 
@@ -34,11 +34,43 @@ The MVP includes at least 6 functional creature species (12 designed), with func
 
 ## Engine
 
-Engine selection is pending. Recommended options:
-- **Godot** (primary recommendation) - Strong 2D capabilities, scene-based architecture, GDScript
-- GameMaker - Strong 2D workflow for sprite-based RPGs
-- Unity - Extensive ecosystem, more infrastructure than initially required
-- Rust - High performance and control, higher initial development cost
+**Selected Engine:** Godot 4.x
+
+Godot was selected for:
+- Strong 2D development capabilities
+- Scene-based architecture
+- Built-in animation and tilemap tools
+- GDScript is approachable for solo/small team
+- Supports data-driven game systems
+- Excellent fit for 2D RPG development
+
+## Getting Started
+
+### Prerequisites
+
+1. **Download Godot 4.x**
+   - Visit: https://godotengine.org/download/windows/
+   - Download Godot 4.7.2 (stable) for Windows
+   - Extract and run - no installation required
+
+2. **Open the Project**
+   - Launch Godot
+   - Click "Import" and select this project folder
+   - Or click "New Project" and set this as the project path
+
+3. **Project Structure**
+   - `scenes/` - Godot scene files (.tscn)
+   - `scripts/` - GDScript files (.gd)
+   - `resources/` - Resource files (.tres, .res)
+   - `autoload/` - Singleton scripts
+   - `assets/` - Art, audio, and other assets
+   - `data/` - Game data definitions (JSON)
+   - `docs/` - Design and technical documentation
+
+### Development
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development workflow and guidelines.
+See [CONVENTIONS.md](CONVENTIONS.md) for coding standards and Godot-specific conventions.
 
 ## Documentation
 

@@ -218,28 +218,105 @@ quest_chapter_one
 
 ## Engine-Specific Conventions
 
-Note: These will be updated after engine selection.
+### Godot (Selected Engine)
 
-### Godot (Recommended)
-
+**Scripting Language:**
 - Use GDScript for game logic
-- Use scene-based architecture
-- Follow Godot naming conventions (nodes, resources, etc.)
+- GDScript 2.0 (Godot 4.x) syntax
+- Type hints recommended for clarity
+
+**Scene-Based Architecture:**
+- Each scene represents a game entity or location
+- Use inheritance with scene trees
+- Keep scenes focused and reusable
+- Use `.tscn` files for scenes
+- Use `.gd` files for scripts
+
+**File Naming:**
+- Scenes: `snake_case.tscn` (e.g., `player.tscn`, `main_menu.tscn`)
+- Scripts: `snake_case.gd` (e.g., `player.gd`, `creature_manager.gd`)
+- Resources: `snake_case.tres` or `snake_case.res` (e.g., `mosskit_species.tres`)
+- Textures: `snake_case.png` or `snake_case.svg` (e.g., `mosskit_idle.png`)
+- Audio: `snake_case.ogg` or `snake_case.mp3` (e.g., `battle_theme.ogg`)
+
+**Node Naming:**
+- Use snake_case for node names in scenes
+- Use descriptive names that indicate purpose
+- Follow Godot's node hierarchy conventions
+
+**Class Naming:**
+- Use PascalCase for class names (class_name declarations)
+- Example: `class_name CreatureManager extends Node`
+
+**Signals:**
 - Use signals for event-driven communication
+- Name signals with past tense verbs (e.g., `creature_tamed`, `battle_ended`)
+- Connect signals in `_ready()` when possible
+- Use `connect()` with callable references
 
-### GameMaker
+**Resources:**
+- Use Resource types for data (e.g., CreatureSpecies, Ability)
+- Store data in `.tres` files
+- Load resources with `load()` or `preload()`
+- Use `@export` for inspector-exposed variables
 
-- Use GML for game logic
-- Follow GameMaker object naming conventions
-- Use rooms for scenes
-- Use scripts for reusable code
+**Autoload Singletons:**
+- Use autoload for global managers (GameManager, SaveManager, etc.)
+- Register in Project Settings > Autoload
+- Access via singleton name globally
+- Example: `GameManager.load_game()`
 
-### Unity
+**Project Structure:**
+```
+Wildbound/
+├── scenes/           # Scene files (.tscn)
+│   ├── player/
+│   ├── creatures/
+│   ├── ui/
+│   └── world/
+├── scripts/          # Script files (.gd)
+│   ├── player/
+│   ├── managers/
+│   └── systems/
+├── resources/        # Resource files (.tres, .res)
+│   ├── creatures/
+│   ├── abilities/
+│   └── data/
+├── autoload/         # Autoload singleton scripts
+└── assets/           # Art, audio, and other assets
+```
 
-- Use C# for game logic
-- Follow Unity naming conventions
-- Use GameObjects and Components
-- Use ScriptableObjects for data
+**GDScript Conventions:**
+- Use `_ready()` for initialization
+- Use `_process()` for per-frame updates
+- Use `_physics_process()` for physics updates
+- Use `_input()` for input handling
+- Use type hints: `var creature: Creature`
+- Use `@export` for editor-exposed variables
+- Use `@onready` for deferred node references: `@onready var sprite = $Sprite2D`
+
+**Constants:**
+- Use `const` for compile-time constants
+- Group related constants
+- Use UPPER_SNAKE_CASE: `const MAX_PARTY_SIZE = 4`
+
+**Functions:**
+- Use `func` keyword
+- Use snake_case for function names
+- Specify return types: `func calculate_damage() -> int:`
+- Use `_` prefix for private functions (optional)
+
+**Groups:**
+- Use Godot groups for organization
+- Add nodes to groups in scene or code
+- Use `get_tree().get_nodes_in_group()` to query groups
+- Common groups: "player", "creatures", "interactables"
+
+**Collision Layers and Masks:**
+- Use collision layers for what the object IS
+- Use collision masks for what the object DETECTS
+- Configure in project settings or per-object
+- Document layer assignments in project.godot
 
 ## Version Control
 
