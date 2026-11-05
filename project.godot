@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Wildbound"
 config/description="Echoes of the Forgotten - A top-down 2D fantasy adventure RPG"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/test_world.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
