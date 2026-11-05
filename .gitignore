@@ -1,0 +1,45 @@
+# Engine-specific files (to be updated after engine selection)
+# Godot
+.import/
+export/
+godot/*.tscn.cache
+
+# GameMaker
+# (Add specific GameMaker ignores after selection)
+
+# Unity
+# (Add specific Unity ignores after selection)
+
+# Build artifacts
+build/
+dist/
+*.exe
+*.app
+*.dmg
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Asset sources (if keeping separate from compiled assets)
+# Uncomment if needed
+# assets/sources/
+
+# Debug
+debug/
