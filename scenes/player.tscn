@@ -10,10 +10,10 @@ collision_layer = 1
 collision_mask = 6
 script = ExtResource("1_abc123")
 
-[node name="CollisionShape2D" type="CollisionShape2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1abc2")
 
-[node name="Sprite2D" type="ColorRect"]
+[node name="Sprite2D" type="ColorRect" parent="."]
 offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0
