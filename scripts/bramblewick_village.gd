@@ -18,6 +18,15 @@ func _ready():
 	# Set up village guide dialogue
 	village_guide.dialogue_started.connect(_on_guide_dialogue)
 
+	# Set up doors
+	for door in $Doors.get_children():
+		door.door_opened.connect(_on_door_opened)
+		door.door_closed.connect(_on_door_closed)
+
+	# Set up items
+	for item in $Items.get_children():
+		item.item_collected.connect(_on_item_collected)
+
 func _on_woods_exit_entered(body: Node2D):
 	if body.is_in_group("player"):
 		print("BramblewickVillage: Player exiting to Whispering Woods")
@@ -31,9 +40,21 @@ func _on_guide_dialogue():
 		"I am the village guide. I can help you get started on your journey.",
 		"To the east lies the Whispering Woods, where you'll find wild creatures.",
 		"Press E or Space to interact with people and objects.",
+		"Try collecting the items scattered around the village!",
 		"Good luck on your adventure!"
 	]
 	dialogue_box.start_dialogue("Village Guide", dialogue_lines)
 
 func _on_dialogue_finished():
 	print("BramblewickVillage: Dialogue finished")
+
+func _on_door_opened(building_name: String):
+	print("BramblewickVillage: Player opened ", building_name)
+	# TODO: Enter building
+
+func _on_door_closed(building_name: String):
+	print("BramblewickVillage: Player closed ", building_name)
+
+func _on_item_collected(item_id: String):
+	print("BramblewickVillage: Player collected item: ", item_id)
+	# TODO: Add to inventory

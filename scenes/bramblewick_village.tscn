@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://g7h8i9j0k1l2"]
+[gd_scene load_steps=8 format=3 uid="uid://g7h8i9j0k1l2"]
 
 [ext_resource type="PackedScene" uid="uid://b2k3l4m5n6o7" path="res://scenes/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" uid="uid://d4e5f6g7h8ja" path="res://scenes/wall.tscn" id="2_wall"]
-[ext_resource type="PackedScene" uid="uid://f6g7h8jaj0k1" path="res://scenes/npc.tscn" id="3_npc"]
+[ext_resource type="PackedScene" uid="uid://f6g7h8jaj0k1" path="res://scenes/npc.tscn" id="3_npc"
 [ext_resource type="Script" path="res://scripts/bramblewick_village.gd" id="4_village"]
 [ext_resource type="PackedScene" uid="uid://i9j0k1l2m3n4" path="res://scenes/dialogue_box.tscn" id="5_dialogue"]
+[ext_resource type="PackedScene" uid="uid://k1l2m3n4o5p6" path="res://scenes/door.tscn" id="6_door"]
+[ext_resource type="PackedScene" uid="uid://l2m3n4o5p6q7" path="res://scenes/item.tscn" id="7_item"]
 
 [node name="BramblewickVillage" type="Node2D"]
 script = ExtResource("4_village")
@@ -82,8 +84,33 @@ offset_right = 520.0
 offset_bottom = 250.0
 color = Color(0.5, 0.3, 0.3, 1)
 
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="PlayerHomeDoor" parent="Doors" instance=ExtResource("6_door")]
+position = Vector2(230, 380)
+
+[node name="SanctuaryDoor" parent="Doors" instance=ExtResource("6_door")]
+position = Vector2(515, 400)
+
+[node name="ShopDoor" parent="Doors" instance=ExtResource("6_door")]
+position = Vector2(760, 380)
+
+[node name="TrainingGroundsDoor" parent="Doors" instance=ExtResource("6_door")]
+position = Vector2(1025, 400)
+
+[node name="ElderHomeDoor" parent="Doors" instance=ExtResource("6_door")]
+position = Vector2(460, 250)
+
 [node name="VillageGuide" parent="." instance=ExtResource("3_npc")]
 position = Vector2(640, 500)
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="ForestBerries" parent="Items" instance=ExtResource("7_item")]
+position = Vector2(300, 450)
+
+[node name="GoldCoin" parent="Items" instance=ExtResource("7_item")]
+position = Vector2(900, 550)
 
 [node name="WoodsExit" type="Area2D" parent="."]
 position = Vector2(1180, 400)
