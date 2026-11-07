@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CreatureInstance" load_steps=2 format=3 uid="uid://o5p6q7r8s9t0"]
+
+[ext_resource type="Resource" uid="uid://uid_placeholder" path="res://data/creatures/mosskit.json" id="1_species"]
+
+[resource]
+script = ExtResource("1_species")
+species_id = "mosskit"
+creature_id = "mosskit_001"
+level = 5
+experience = 120
+current_hp = 45
+relationship = 25
+environmental_affinity = {
+"nature": 15,
+"earth": 5
+}
+known_abilities = ["seedburst"]
+evolution_state = "unevolved"
+personality = "curious"

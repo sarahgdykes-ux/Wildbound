@@ -103,6 +103,8 @@ menu={
 [autoload]
 
 DataManager="*res://autoload/data_manager.gd"
+PartyManager="*res://autoload/party_manager.gd"
+SanctuaryManager="*res://autoload/sanctuary_manager.gd"
 
 [rendering]
 

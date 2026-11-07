@@ -27,6 +27,18 @@ func _on_data_loaded():
 	if not mosskit.is_empty():
 		print("Main: Successfully loaded Mosskit data")
 
+	# Create test creature instance
+	var test_creature = CreatureInstance.new()
+	test_creature.initialize(mosskit)
+	test_creature.creature_id = "mosskit_test_001"
+	print("Main: Created test creature instance")
+	print("  HP: ", test_creature.get_max_hp())
+	print("  Level: ", test_creature.level)
+
+	# Add to party
+	PartyManager.add_creature(test_creature)
+	print("Main: Added creature to party")
+
 	# Load Bramblewick Village
 	get_tree().change_scene_to_file("res://scenes/bramblewick_village.tscn")
 
