@@ -2,6 +2,8 @@ extends StaticBody2D
 
 ## Simple NPC for testing interactions
 
+signal dialogue_started
+
 @onready var label: Label = $Label
 @onready var interaction_area: Area2D = $InteractionArea
 
@@ -28,8 +30,4 @@ func _input(event: InputEvent) -> void:
 		interact()
 
 func interact() -> void:
-	if not dialogue_shown:
-		print("NPC: Hello, traveler! Welcome to Wildbound!")
-		dialogue_shown = true
-	else:
-		print("NPC: Is there anything else you need?")
+	emit_signal("dialogue_started")

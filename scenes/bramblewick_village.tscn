@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://g7h8i9j0k1l2"]
+
+[ext_resource type="PackedScene" uid="uid://b2k3l4m5n6o7" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://d4e5f6g7h8ja" path="res://scenes/wall.tscn" id="2_wall"]
+[ext_resource type="PackedScene" uid="uid://f6g7h8jaj0k1" path="res://scenes/npc.tscn" id="3_npc"]
+[ext_resource type="Script" path="res://scripts/bramblewick_village.gd" id="4_village"]
+[ext_resource type="PackedScene" uid="uid://i9j0k1l2m3n4" path="res://scenes/dialogue_box.tscn" id="5_dialogue"]
+
+[node name="BramblewickVillage" type="Node2D"]
+script = ExtResource("4_village")
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(640, 400)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 400)
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+limit_smoothed = true
+
+[node name="DialogueBox" parent="." instance=ExtResource("5_dialogue")]
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 2280.0
+offset_bottom = 1440.0
+color = Color(0.3, 0.5, 0.3, 1)
+
+[node name="VillageWalls" type="Node2D" parent="."]
+
+[node name="WallTop" parent="VillageWalls" instance=ExtResource("2_wall")]
+position = Vector2(640, 50)
+scale = Vector2(20, 1)
+
+[node name="WallBottom" parent="VillageWalls" instance=ExtResource("2_wall")]
+position = Vector2(640, 750)
+scale = Vector2(20, 1)
+
+[node name="WallLeft" parent="VillageWalls" instance=ExtResource("2_wall")]
+position = Vector2(100, 400)
+scale = Vector2(1, 12)
+
+[node name="WallRight" parent="VillageWalls" instance=ExtResource("2_wall")]
+position = Vector2(1180, 400)
+scale = Vector2(1, 12)
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="PlayerHome" type="ColorRect" parent="Buildings"]
+offset_left = 180.0
+offset_top = 280.0
+offset_right = 280.0
+offset_bottom = 380.0
+color = Color(0.4, 0.3, 0.2, 1)
+
+[node name="Sanctuary" type="ColorRect" parent="Buildings"]
+offset_left = 450.0
+offset_top = 280.0
+offset_right = 580.0
+offset_bottom = 400.0
+color = Color(0.3, 0.3, 0.5, 1)
+
+[node name="Shop" type="ColorRect" parent="Buildings"]
+offset_left = 700.0
+offset_top = 280.0
+offset_right = 820.0
+offset_bottom = 380.0
+color = Color(0.5, 0.4, 0.3, 1)
+
+[node name="TrainingGrounds" type="ColorRect" parent="Buildings"]
+offset_left = 950.0
+offset_top = 280.0
+offset_right = 1100.0
+offset_bottom = 400.0
+color = Color(0.4, 0.4, 0.4, 1)
+
+[node name="ElderHome" type="ColorRect" parent="Buildings"]
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 520.0
+offset_bottom = 250.0
+color = Color(0.5, 0.3, 0.3, 1)
+
+[node name="VillageGuide" parent="." instance=ExtResource("3_npc")]
+position = Vector2(640, 500)
+
+[node name="WoodsExit" type="Area2D" parent="."]
+position = Vector2(1180, 400)
+
+[node name="WoodsExitShape" type="CollisionShape2D" parent="WoodsExit"]
+shape = SubResource("RectangleShape2D_wall")

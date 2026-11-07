@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://j0k1l2m3n4o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_creature"]
+size = Vector2(32, 32)
+
+[node name="CreatureSprite" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_creature")
+
+[node name="Sprite" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.2, 0.8, 0.2, 1)

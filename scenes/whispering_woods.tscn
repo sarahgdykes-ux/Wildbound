@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://h8i9j0k1l2m3"]
+
+[ext_resource type="PackedScene" uid="uid://b2k3l4m5n6o7" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://d4e5f6g7h8ja" path="res://scenes/wall.tscn" id="2_wall"]
+[ext_resource type="PackedScene" uid="uid://f6g7h8jaj0k1" path="res://scenes/npc.tscn" id="3_npc"]
+[ext_resource type="Script" path="res://scripts/whispering_woods.gd" id="5_woods"]
+[ext_resource type="PackedScene" uid="uid://i9j0k1l2m3n4" path="res://scenes/dialogue_box.tscn" id="6_dialogue"]
+[ext_resource type="PackedScene" uid="uid://j0k1l2m3n4o5" path="res://scenes/creature_sprite.tscn" id="7_creature"]
+
+[node name="WhisperingWoods" type="Node2D"]
+script = ExtResource("5_woods")
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(200, 400)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(200, 400)
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+limit_smoothed = true
+
+[node name="DialogueBox" parent="." instance=ExtResource("6_dialogue")]
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 2280.0
+offset_bottom = 1440.0
+color = Color(0.2, 0.4, 0.2, 1)
+
+[node name="ForestWalls" type="Node2D" parent="."]
+
+[node name="WallTop" parent="ForestWalls" instance=ExtResource("2_wall")]
+position = Vector2(640, 50)
+scale = Vector2(20, 1)
+
+[node name="WallBottom" parent="ForestWalls" instance=ExtResource("2_wall")]
+position = Vector2(640, 750)
+scale = Vector2(20, 1)
+
+[node name="WallLeft" parent="ForestWalls" instance=ExtResource("2_wall")]
+position = Vector2(100, 400)
+scale = Vector2(1, 12)
+
+[node name="WallRight" parent="ForestWalls" instance=ExtResource("2_wall")]
+position = Vector2(1180, 400)
+scale = Vector2(1, 12)
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree1" type="ColorRect" parent="Trees"]
+offset_left = 280.0
+offset_top = 280.0
+offset_right = 320.0
+offset_bottom = 360.0
+color = Color(0.15, 0.3, 0.15, 1)
+
+[node name="Tree2" type="ColorRect" parent="Trees"]
+offset_left = 450.0
+offset_top = 500.0
+offset_right = 490.0
+offset_bottom = 580.0
+color = Color(0.15, 0.3, 0.15, 1)
+
+[node name="Tree3" type="ColorRect" parent="Trees"]
+offset_left = 700.0
+offset_top = 300.0
+offset_right = 740.0
+offset_bottom = 380.0
+color = Color(0.15, 0.3, 0.15, 1)
+
+[node name="Tree4" type="ColorRect" parent="Trees"]
+offset_left = 850.0
+offset_top = 550.0
+offset_right = 890.0
+offset_bottom = 630.0
+color = Color(0.15, 0.3, 0.15, 1)
+
+[node name="Tree5" type="ColorRect" parent="Trees"]
+offset_left = 550.0
+offset_top = 200.0
+offset_right = 590.0
+offset_bottom = 280.0
+color = Color(0.15, 0.3, 0.15, 1)
+
+[node name="HiddenClearing" type="ColorRect" parent="."]
+offset_left = 400.0
+offset_top = 500.0
+offset_right = 500.0
+offset_bottom = 600.0
+color = Color(0.3, 0.5, 0.3, 1)
+
+[node name="Creatures" type="Node2D" parent="."]
+
+[node name="Mosskit1" parent="Creatures" instance=ExtResource("7_creature")]
+position = Vector2(350, 350)
+
+[node name="Mosskit2" parent="Creatures" instance=ExtResource("7_creature")]
+position = Vector2(550, 250)
+
+[node name="Shroomble" parent="Creatures" instance=ExtResource("7_creature")]
+position = Vector2(750, 400)
+
+[node name="VillageExit" type="Area2D" parent="."]
+position = Vector2(100, 400)
+
+[node name="VillageExitShape" type="CollisionShape2D" parent="VillageExit"]
+shape = SubResource("RectangleShape2D_wall")

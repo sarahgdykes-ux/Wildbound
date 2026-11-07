@@ -27,8 +27,8 @@ func _on_data_loaded():
 	if not mosskit.is_empty():
 		print("Main: Successfully loaded Mosskit data")
 
-	# Load test world
-	get_tree().change_scene_to_file("res://scenes/test_world.tscn")
+	# Load Bramblewick Village
+	get_tree().change_scene_to_file("res://scenes/bramblewick_village.tscn")
 
 func _on_data_load_failed(error: String):
 	print("Main: ERROR - Failed to load data: ", error)
