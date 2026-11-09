@@ -11,6 +11,9 @@ func _ready():
 
 	# Connect to woods exit
 	$WoodsExit.body_entered.connect(_on_woods_exit_entered)
+	
+	# Connect to village exit
+	$VillageExit.body_entered.connect(_on_village_exit_entered)
 
 	# Connect to dialogue box
 	dialogue_box.dialogue_finished.connect(_on_dialogue_finished)
@@ -33,6 +36,11 @@ func _on_woods_exit_entered(body: Node2D):
 		# TODO: Save player position
 		# TODO: Transition to Whispering Woods
 		get_tree().change_scene_to_file("res://scenes/whispering_woods.tscn")
+
+func _on_village_exit_entered(body: Node2D):
+	if body.is_in_group("player"):
+		print("BramblewickVillage: Player at village exit (placeholder)")
+		# TODO: Future expansion area
 
 func _on_guide_dialogue():
 	var dialogue_lines = [

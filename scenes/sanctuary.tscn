@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://s9t0u1v2w3x4"]
+[gd_scene load_steps=3 format=3 uid="uid://s9t0u1v2w3x4"]
 
 [ext_resource type="Script" path="res://scripts/sanctuary.gd" id="1_sanctuary"]
+[ext_resource type="PackedScene" uid="uid://b2k3l4m5n6o7" path="res://scenes/player.tscn" id="2_player"]
 
 [node name="Sanctuary" type="Node2D"]
 script = ExtResource("1_sanctuary")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(640, 400)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 400)
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+limit_smoothed = true
 
 [node name="Ground" type="ColorRect" parent="."]
 offset_left = -1000.0
