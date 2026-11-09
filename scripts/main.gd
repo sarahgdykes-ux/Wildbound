@@ -39,7 +39,10 @@ func _on_data_loaded():
 	PartyManager.add_creature(test_creature)
 	print("Main: Added creature to party")
 
-	# Load Bramblewick Village
+	# Load Bramblewick Village (deferred to avoid scene tree conflicts)
+	call_deferred("_load_village_scene")
+
+func _load_village_scene():
 	get_tree().change_scene_to_file("res://scenes/bramblewick_village.tscn")
 
 func _on_data_load_failed(error: String):
