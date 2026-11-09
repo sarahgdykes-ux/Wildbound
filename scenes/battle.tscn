@@ -1,0 +1,183 @@
+[gd_scene load_steps=2 format=3 uid="uid://r8s9t0u1v2w3"]
+
+[ext_resource type="Script" path="res://scripts/battle.gd" id="1_battle"]
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_battle")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.2, 1)
+
+[node name="EnemyPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 20.0
+offset_right = -20.0
+offset_bottom = 200.0
+grow_horizontal = 2
+
+[node name="EnemyName" type="Label" parent="EnemyPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_type_colors = &"font_color"
+text = "Enemy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyHPBar" type="ProgressBar" parent="EnemyPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 70.0
+offset_right = -20.0
+offset_bottom = 100.0
+grow_horizontal = 2
+max_value = 100.0
+value = 100.0
+
+[node name="EnemySprite" type="ColorRect" parent="EnemyPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 110.0
+offset_right = 32.0
+offset_bottom = 180.0
+grow_horizontal = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="PlayerPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 20.0
+anchor_top = 300.0
+anchor_right = -20.0
+anchor_bottom = 520.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerName" type="Label" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_type_colors = &"font_color"
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHPBar" type="ProgressBar" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 70.0
+offset_right = -20.0
+offset_bottom = 100.0
+grow_horizontal = 2
+max_value = 100.0
+value = 100.0
+
+[node name="PlayerSprite" type="ColorRect" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 110.0
+offset_right = 32.0
+offset_bottom = 180.0
+grow_horizontal = 2
+color = Color(0.2, 0.6, 1, 1)
+
+[node name="ActionMenu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 20.0
+offset_left = 20.0
+offset_right = -20.0
+offset_top = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AttackButton" type="Button" parent="ActionMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 10.0
+offset_right = 80.0
+offset_bottom = 50.0
+grow_horizontal = 2
+text = "Attack"
+
+[node name="AbilityButton" type="Button" parent="ActionMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 60.0
+offset_right = 80.0
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "Ability"
+
+[node name="SwitchButton" type="Button" parent="ActionMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 110.0
+offset_right = 80.0
+offset_bottom = 150.0
+grow_horizontal = 2
+text = "Switch"
+
+[node name="FleeButton" type="Button" parent="ActionMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 160.0
+offset_right = 80.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "Flee"
+
+[node name="BattleLog" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 20.0
+anchor_top = 300.0
+anchor_right = 300.0
+anchor_bottom = 520.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_colors = &"font_color"
+text = "Battle started..."

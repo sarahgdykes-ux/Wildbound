@@ -4,6 +4,7 @@ extends Area2D
 ## Can be encountered and tamed
 
 signal encounter_started(creature_data: Dictionary)
+signal battle_started(creature_data: Dictionary)
 
 @onready var trigger_area = $TriggerArea
 
@@ -18,7 +19,7 @@ func _on_body_entered(body: Node2D):
 	if body.is_in_group("player") and not is_encountered:
 		var creature_data = DataManager.get_creature(species_id)
 		if not creature_data.is_empty():
-			emit_signal("encounter_started", creature_data)
+			emit_signal("battle_started", creature_data)
 
 func _on_body_exited(body: Node2D):
 	pass

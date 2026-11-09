@@ -20,6 +20,12 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DataManager="*res://autoload/data_manager.gd"
+PartyManager="*res://autoload/party_manager.gd"
+SanctuaryManager="*res://autoload/sanctuary_manager.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -99,12 +105,6 @@ menu={
 2d_physics/layer_30="Ignore"
 2d_physics/layer_31="Ignore"
 2d_physics/layer_32="Ignore"
-
-[autoload]
-
-DataManager="*res://autoload/data_manager.gd"
-PartyManager="*res://autoload/party_manager.gd"
-SanctuaryManager="*res://autoload/sanctuary_manager.gd"
 
 [rendering]
 

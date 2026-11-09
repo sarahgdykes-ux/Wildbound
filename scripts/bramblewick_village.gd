@@ -50,7 +50,9 @@ func _on_dialogue_finished():
 
 func _on_door_opened(building_name: String):
 	print("BramblewickVillage: Player opened ", building_name)
-	# TODO: Enter building
+	if building_name == "Sanctuary":
+		get_tree().change_scene_to_file("res://scenes/sanctuary.tscn")
+	# TODO: Enter other buildings
 
 func _on_door_closed(building_name: String):
 	print("BramblewickVillage: Player closed ", building_name)

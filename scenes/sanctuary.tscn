@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://s9t0u1v2w3x4"]
+
+[ext_resource type="Script" path="res://scripts/sanctuary.gd" id="1_sanctuary"]
+
+[node name="Sanctuary" type="Node2D"]
+script = ExtResource("1_sanctuary")
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 2280.0
+offset_bottom = 1440.0
+color = Color(0.4, 0.6, 0.4, 1)
+
+[node name="Meadow" type="ColorRect" parent="."]
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 800.0
+offset_bottom = 500.0
+color = Color(0.5, 0.7, 0.5, 1)
+
+[node name="Pond" type="ColorRect" parent="."]
+offset_left = 850.0
+offset_top = 200.0
+offset_right = 1100.0
+offset_bottom = 400.0
+color = Color(0.3, 0.5, 0.8, 0.8)
+
+[node name="Forest" type="ColorRect" parent="."]
+offset_left = 200.0
+offset_top = 550.0
+offset_right = 500.0
+offset_bottom = 700.0
+color = Color(0.3, 0.5, 0.3, 1)
+
+[node name="Training" type="ColorRect" parent="."]
+offset_left = 550.0
+offset_top = 550.0
+offset_right = 900.0
+offset_bottom = 700.0
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Creatures" type="Node2D" parent="."]
+
+[node name="ExitButton" type="Button" parent="."]
+position = Vector2(1200, 50)
+text = "Exit"
+
+[node name="InfoLabel" type="Label" parent="."]
+position = Vector2(640, 50)
+theme_type_colors = &"font_color"
+text = "Sanctuary - 0 Creatures"
+horizontal_alignment = 1
+
+[node name="PartyLabel" type="Label" parent="."]
+position = Vector2(640, 720)
+theme_type_colors = &"font_color"
+text = "Party: 0/4"
+horizontal_alignment = 1
