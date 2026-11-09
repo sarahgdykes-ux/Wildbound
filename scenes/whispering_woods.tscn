@@ -19,12 +19,13 @@ script = ExtResource("5_woods")
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
 position = Vector2(200, 400)
+z_index = 10
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(200, 400)
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 position_smoothing_speed = 5.0
 limit_smoothed = true
+enabled = true
 
 [node name="DialogueBox" parent="." instance=ExtResource("6_dialogue")]
 
