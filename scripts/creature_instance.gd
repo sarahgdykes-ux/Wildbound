@@ -19,7 +19,7 @@ var base_stats: Dictionary = {}
 var current_stats: Dictionary = {}
 
 func _init():
-	current_hp = get_max_hp()
+	pass  # Don't initialize HP here - wait for initialize() to be called
 
 ## Load species data and calculate stats
 func initialize(species_data: Dictionary) -> void:
@@ -39,7 +39,12 @@ func calculate_stats(lvl: int) -> Dictionary:
 
 ## Get maximum HP
 func get_max_hp() -> int:
-	return current_stats.hp if current_stats.has("hp") else base_stats.hp
+	if current_stats.has("hp"):
+		return current_stats.hp
+	elif base_stats.has("hp"):
+		return base_stats.hp
+	else:
+		return 50  # Default fallback
 
 ## Add experience
 func add_exp(amount: int) -> void:
