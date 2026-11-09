@@ -4,7 +4,7 @@ A top-down 2D fantasy adventure RPG featuring creature discovery, taming, and st
 
 ## Project Status
 
-**Phase 1: Project Foundation** - Engine selected (Godot 4.x), project structure established, initial implementation in progress.
+**MVP COMPLETE** - All 9 development phases complete. Playable demo with exploration, combat, creatures, sanctuary, evolution, and boss encounters.
 
 ## Game Overview
 
@@ -46,7 +46,7 @@ Godot was selected for:
 
 ## Getting Started
 
-### Prerequisites
+### Quick Start
 
 1. **Download Godot 4.x**
    - Visit: https://godotengine.org/download/windows/
@@ -58,7 +58,13 @@ Godot was selected for:
    - Click "Import" and select this project folder
    - Or click "New Project" and set this as the project path
 
-3. **Project Structure**
+3. **Run the Game**
+   - Press **F5** in Godot to run
+   - Use **WASD** or **Arrow keys** to move
+   - Press **E** or **Space** to interact
+   - Press **Escape** for menu
+
+### Project Structure
    - `scenes/` - Godot scene files (.tscn)
    - `scripts/` - GDScript files (.gd)
    - `resources/` - Resource files (.tres, .res)
@@ -80,6 +86,33 @@ See [CONVENTIONS.md](CONVENTIONS.md) for coding standards and Godot-specific con
 - [Creature Roster](docs/CREATURE_ROSTER.md) - Detailed creature specifications
 - [Region Designs](docs/REGION_DESIGNS.md) - World and region design details
 - [Open Questions](docs/OPEN_QUESTIONS.md) - Design decisions and questions
+
+## Current Features
+
+### Implemented Systems
+- **Exploration** - Bramblewick Village, Whispering Woods, Hollow Ruins
+- **Player Movement** - 8-directional movement with collision
+- **Interactions** - NPCs, doors, items, creatures
+- **Dialogue System** - Typing effect with multi-line progression
+- **Combat System** - Turn-based battles with abilities
+- **Creature Discovery** - Wild creatures in the woods
+- **Taming** - Battle-based creature capture
+- **Party Management** - Up to 4 creatures in party
+- **Sanctuary** - Unlimited creature storage
+- **Relationships** - Progress through interactions
+- **Evolution** - Branching paths based on requirements
+- **Quest System** - Rival and boss encounters
+- **Experience & Leveling** - XP rewards and stat scaling
+
+### Playable Areas
+- **Bramblewick Village** - Starting settlement with buildings, NPC, doors, items
+- **Whispering Woods** - Forest with creatures, trees, items, obstacles
+- **Hollow Ruins** - Ancient ruins with puzzle, rival, and boss
+
+### Creatures
+- **Mosskit** - Nature starter creature
+- **Cindlet** - Fire creature (available in data)
+- Additional creatures can be added via JSON data files
 
 ## Development Roadmap
 

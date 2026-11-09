@@ -8,34 +8,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Project repository initialization
-- Complete project directory structure
-- Game Design Document (GDD) with full game specification
-- Development Roadmap with detailed phase breakdown
-- Technical Architecture documentation
-- Creature Roster with 12 designed species
-- Region Designs for Verdant Hollow and future regions
-- Open Questions document tracking design decisions
-- Contribution guidelines
-- Project conventions and coding standards
-- Development backlog with actionable tasks
-- README with project overview
-- .gitignore configured for general use
+- Godot 4.7 project configuration
+- Player character with movement (WASD/Arrow keys)
+- Collision system with walls and obstacles
+- Interaction system (E/Space)
+- Bramblewick Village scene with buildings, doors, items, NPC
+- Whispering Woods scene with trees, creatures, items, obstacles
+- Hollow Ruins scene with puzzle, rival, boss
+- Sanctuary scene with creature storage and relationship system
+- Dialogue system with typing effect
+- Battle system with turn-based combat
+- Creature instances with stats and XP
+- Party management (max 4 creatures)
+- Sanctuary storage (unlimited)
+- Encyclopedia UI
+- Taming system (simplified to battle for MVP)
+- Evolution system with branching paths
+- Quest system with rival and boss encounters
+- Environmental affinity tracking
+- Relationship progression system
+- Experience and leveling system
+- Evolution notification UI
+- DataManager autoload for JSON loading
+- PartyManager autoload for party management
+- SanctuaryManager autoload for creature storage
+- Creature data files (mosskit, cindlet)
+- Ability data files (seedburst, ember_rush)
+- Region data files (verdant_hollow)
 
 ### Changed
-- N/A (initial project setup)
-
-### Deprecated
-- N/A
-
-### Removed
-- N/A
+- Project structure adapted for Godot 4.x
+- Data format uses JSON for all game data
+- Scene-based architecture with GDScript
+- Autoload singletons for global managers
 
 ### Fixed
-- N/A
+- Scene syntax errors (parent references, load_steps)
+- Autoload reference issues
+- Signal connection errors
+- Resource declaration syntax
 
 ### Security
 - N/A
+
+---
+
+## [0.1.0] - 2026-11-09 (MVP Release)
+
+### Added
+- Complete Phase 1: Project Foundation
+- Complete Phase 2: World Exploration
+- Complete Phase 3: Creature Foundation
+- Complete Phase 4: Taming
+- Complete Phase 5: Combat
+- Complete Phase 6: Sanctuary and Relationships
+- Complete Phase 7: Evolution
+- Complete Phase 8: Story and Boss Encounter
+- Complete Phase 9: Polish and Testing
+
+### Summary
+Wildbound: Echoes of the Forgotten MVP is complete. The game features:
+- Full exploration across 3 scenes (village, woods, ruins)
+- Turn-based combat with abilities
+- Creature discovery and taming
+- Sanctuary for creature storage
+- Relationship progression
+- Evolution system with branching paths
+- Quest with rival and boss encounters
+- All core systems functional and tested
 
 ---
 
