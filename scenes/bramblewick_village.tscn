@@ -53,35 +53,75 @@ scale = Vector2(1, 12)
 
 [node name="Buildings" type="Node2D" parent="."]
 
-[node name="PlayerHome" type="ColorRect" parent="Buildings"]
+[node name="PlayerHome" type="StaticBody2D" parent="Buildings"]
+position = Vector2(230, 330)
+collision_layer = 16
+collision_mask = 0
+
+[node name="PlayerHomeCollision" type="CollisionShape2D" parent="Buildings/PlayerHome"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="PlayerHomeVisual" type="ColorRect" parent="Buildings"]
 offset_left = 180.0
 offset_top = 280.0
 offset_right = 280.0
 offset_bottom = 380.0
 color = Color(0.4, 0.3, 0.2, 1)
 
-[node name="Sanctuary" type="ColorRect" parent="Buildings"]
+[node name="Sanctuary" type="StaticBody2D" parent="Buildings"]
+position = Vector2(515, 340)
+collision_layer = 16
+collision_mask = 0
+
+[node name="SanctuaryCollision" type="CollisionShape2D" parent="Buildings/Sanctuary"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="SanctuaryVisual" type="ColorRect" parent="Buildings"]
 offset_left = 450.0
 offset_top = 280.0
 offset_right = 580.0
 offset_bottom = 400.0
 color = Color(0.3, 0.3, 0.5, 1)
 
-[node name="Shop" type="ColorRect" parent="Buildings"]
+[node name="Shop" type="StaticBody2D" parent="Buildings"]
+position = Vector2(760, 330)
+collision_layer = 16
+collision_mask = 0
+
+[node name="ShopCollision" type="CollisionShape2D" parent="Buildings/Shop"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="ShopVisual" type="ColorRect" parent="Buildings"]
 offset_left = 700.0
 offset_top = 280.0
 offset_right = 820.0
 offset_bottom = 380.0
 color = Color(0.5, 0.4, 0.3, 1)
 
-[node name="TrainingGrounds" type="ColorRect" parent="Buildings"]
+[node name="TrainingGrounds" type="StaticBody2D" parent="Buildings"]
+position = Vector2(1025, 340)
+collision_layer = 16
+collision_mask = 0
+
+[node name="TrainingGroundsCollision" type="CollisionShape2D" parent="Buildings/TrainingGrounds"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="TrainingGroundsVisual" type="ColorRect" parent="Buildings"]
 offset_left = 950.0
 offset_top = 280.0
 offset_right = 1100.0
 offset_bottom = 400.0
 color = Color(0.4, 0.4, 0.4, 1)
 
-[node name="ElderHome" type="ColorRect" parent="Buildings"]
+[node name="ElderHome" type="StaticBody2D" parent="Buildings"]
+position = Vector2(460, 200)
+collision_layer = 16
+collision_mask = 0
+
+[node name="ElderHomeCollision" type="CollisionShape2D" parent="Buildings/ElderHome"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="ElderHomeVisual" type="ColorRect" parent="Buildings"]
 offset_left = 400.0
 offset_top = 150.0
 offset_right = 520.0

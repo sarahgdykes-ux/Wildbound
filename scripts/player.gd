@@ -31,3 +31,13 @@ func _physics_process(_delta: float) -> void:
 
 	# Move the character
 	move_and_slide()
+
+func _process(_delta: float) -> void:
+	# Check for interaction input
+	if Input.is_action_just_pressed("interact"):
+		_check_interactions()
+
+func _check_interactions():
+	# Check for nearby interactables
+	# This is a simple implementation - the actual interaction should be handled by the interactable objects
+	pass
