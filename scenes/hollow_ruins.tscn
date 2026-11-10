@@ -56,7 +56,7 @@ color = Color(0.5, 0.5, 0.6, 1)
 [node name="Rival" type="Area2D" parent="."]
 position = Vector2(400, 500)
 collision_layer = 1
-collision_mask = 2
+collision_mask = 1
 
 [node name="RivalSprite" type="ColorRect" parent="Rival"]
 offset_left = -16.0
@@ -75,7 +75,7 @@ shape = SubResource("1_shape")
 [node name="Guardian" type="Area2D" parent="BossArena"]
 position = Vector2(640, 360)
 collision_layer = 1
-collision_mask = 2
+collision_mask = 1
 
 [node name="GuardianSprite" type="ColorRect" parent="Guardian"]
 offset_left = -32.0
@@ -90,7 +90,7 @@ shape = SubResource("1_shape")
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2(100, 400)
 collision_layer = 1
-collision_mask = 2
+collision_mask = 1
 
 [node name="ExitTrigger" type="CollisionShape2D" parent="Exit"]
 shape = SubResource("1_shape")

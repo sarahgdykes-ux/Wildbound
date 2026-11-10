@@ -6,6 +6,38 @@ A top-down 2D fantasy adventure RPG featuring creature discovery, taming, and st
 
 **MVP COMPLETE** - All 9 development phases complete. Playable demo with exploration, combat, creatures, sanctuary, evolution, and boss encounters.
 
+**Note:** The project is functional but contains known issues identified during code review. See the CRITICAL ISSUES section below.
+
+## Critical Issues
+
+The following issues have been identified and should be addressed:
+
+### P0 - Critical (Fixed)
+- ✅ **WB-A01**: Whispering Woods script errors - Fixed randi() and missing handlers
+- ✅ **WB-A02**: Sanctuary random positioning - Fixed randi() to randi_range()
+- ✅ **WB-A03**: Player collision configuration - Fixed collision mask to detect all layers
+- ✅ **WB-A04**: Hollow Ruins triggers - Fixed collision masks to detect player
+
+### High Priority (Partially Fixed)
+- ⚠️ **WB-A05**: Door building names - Now auto-generated from node names
+- ⚠️ **WB-A06**: Wild encounters use battle instead of taming UI - Intentional for MVP
+- ⚠️ **WB-A07**: Battle victory hides entire scene - Fixed to remove only creature sprite
+- ⚠️ **WB-A08**: Battle scenes not freed - Fixed with queue_free()
+- ⚠️ **WB-A09**: Sanctuary transfer uses wrong method - Fixed to use transfer_to_party()
+- ⚠️ **WB-A10**: Relationship farming - Still allows repeated clicks (needs cooldown)
+- ✅ **WB-A11**: Creature encounters repeat - Fixed with is_encountered flag
+- ⚠️ **WB-A12**: Dialogue doesn't block movement - Needs implementation
+
+### Remaining Issues
+- **WB-A13**: Evolution requirements not fully evaluated (fire_victories, hp_remaining_avg, etc.)
+- **WB-A14**: Multiple level-ups (fixed with loop)
+- **WB-A15**: Damage/healing validation (fixed with clamping)
+- **WB-A16**: Battle switching is placeholder
+- **WB-A17**: Battle UI cleanup (partially fixed)
+- **WB-A18-WB-A24**: Data integrity and architecture issues
+
+See [CHANGELOG.md](CHANGELOG.md) for detailed bug fix history.
+
 ## Game Overview
 
 Wildbound: Echoes of the Forgotten is a creature-taming RPG where players explore a vast magical world, discover unique creatures, develop relationships with them, and participate in strategic turn-based battles. The game emphasizes individual creature personalities, different taming methods, environmental evolution, and a shared sanctuary where discovered creatures live together.

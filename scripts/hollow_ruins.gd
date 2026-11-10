@@ -61,9 +61,11 @@ func _start_rival_battle():
 		player_creature.initialize(mosskit_data)
 		player_creature.creature_id = "mosskit_party_001"
 	
-	# Create rival creature (stronger mosskit)
-	var rival_data = DataManager.get_creature("mosskit")
+	# Create rival creature (stronger mosskit) - deep copy to avoid modifying original
+	var mosskit_data = DataManager.get_creature("mosskit")
+	var rival_data = mosskit_data.duplicate(true)
 	rival_data.name = "Rival's Mosskit"
+	rival_data.base_stats = rival_data.base_stats.duplicate(true)
 	rival_data.base_stats.hp = 70
 	rival_data.base_stats.attack = 45
 	rival_data.base_stats.defense = 40

@@ -56,8 +56,8 @@ func _get_creature_color(species_id: String) -> Color:
 func _get_random_position() -> Vector2:
 	var meadow_area = Rect2(200, 200, 800, 500)
 	return Vector2(
-		randi(int(meadow_area.position.x), int(meadow_area.position.x + meadow_area.size.x)),
-		randi(int(meadow_area.position.y), int(meadow_area.position.y + meadow_area.size.y))
+		randi_range(int(meadow_area.position.x), int(meadow_area.position.x + meadow_area.size.x)),
+		randi_range(int(meadow_area.position.y), int(meadow_area.position.y + meadow_area.size.y))
 	)
 
 func _add_interaction(sprite: ColorRect, creature: CreatureInstance):
@@ -85,11 +85,13 @@ func _show_creature_info(creature_id: String):
 			print("Sanctuary: Viewing ", creature.species_id)
 			print("  Level: ", creature.level)
 			print("  Relationship: ", creature.relationship, "(", creature.get_relationship_stage(), ")")
-			# Add relationship when viewing
-			creature.add_relationship(5)
-			print("  Relationship +5 (viewing)")
+			# Add relationship when viewing (with cooldown check could be added later)
+			if creature.relationship < 100:
+				creature.add_relationship(5)
+				print("  Relationship +5 (viewing)")
 			# Transfer to party if party has space
-			if PartyManager.party.size() < PartyManager.MAX_PARTY_SIZE:
-				SanctuaryManager.transfer_from_party(creature)
-				print("  Transferred to party!")
+			if PartyManager.get_party_size() < PartyManager.MAX_PARTY_SIZE:
+				if SanctuaryManager.transfer_to_party(creature):
+					print("  Transferred to party!")
+					refresh_creatures()
 			break

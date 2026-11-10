@@ -139,7 +139,6 @@ func add_log(text: String) -> void:
 
 func end_battle(result: String) -> void:
 	battle_active = false
-	emit_signal("battle_ended", result)
 	
 	if result == "victory":
 		emit_signal("battle_victory")
@@ -166,5 +165,8 @@ func end_battle(result: String) -> void:
 		player_creature.restore_hp()
 		add_log(player_creature.species_id.capitalize() + " was restored.")
 	
+	emit_signal("battle_ended", result)
+	
 	await get_tree().create_timer(2.0).timeout
 	visible = false
+	queue_free()  # Free the battle scene

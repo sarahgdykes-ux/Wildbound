@@ -17,6 +17,9 @@ func _ready() -> void:
 	trigger_area.body_entered.connect(_on_body_entered)
 	trigger_area.body_exited.connect(_on_body_exited)
 	label.visible = false
+	
+	# Set building_name from node name
+	building_name = name.replace("Door", "").replace("_", " ").capitalize()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

@@ -49,8 +49,8 @@ func get_max_hp() -> int:
 ## Add experience
 func add_exp(amount: int) -> void:
 	experience += amount
-	var exp_needed = get_exp_needed_for_level(level + 1)
-	if experience >= exp_needed:
+	# Check for multiple level-ups
+	while experience >= get_exp_needed_for_level(level + 1):
 		level_up()
 
 ## Get experience needed for next level
@@ -114,12 +114,16 @@ func evolve(target_species: String) -> void:
 
 ## Take damage
 func take_damage(amount: int) -> void:
+	if amount < 0:
+		amount = 0  # Reject negative damage
 	current_hp -= amount
 	if current_hp < 0:
 		current_hp = 0
 
 ## Heal
 func heal(amount: int) -> void:
+	if amount < 0:
+		amount = 0  # Reject negative healing
 	current_hp += amount
 	if current_hp > get_max_hp():
 		current_hp = get_max_hp()
