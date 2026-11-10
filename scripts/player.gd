@@ -4,6 +4,7 @@ extends CharacterBody2D
 ## Handles movement and basic player actions
 
 const SPEED = 200.0
+const INTERACTION_DISTANCE = 60.0
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
@@ -35,9 +36,14 @@ func _physics_process(_delta: float) -> void:
 func _process(_delta: float) -> void:
 	# Check for interaction input
 	if Input.is_action_just_pressed("interact"):
-		_check_interactions()
+		_try_interact()
 
-func _check_interactions():
-	# Check for nearby interactables
-	# This is a simple implementation - the actual interaction should be handled by the interactable objects
-	pass
+func _try_interact():
+	# Use simple distance check for all interactables
+	for node in get_tree().get_nodes_in_group("interactable"):
+		if node.has_method("interact"):
+			var distance = global_position.distance_to(node.global_position)
+			if distance < INTERACTION_DISTANCE:
+				node.interact()
+				print("Player: Interacted with ", node.name)
+				return

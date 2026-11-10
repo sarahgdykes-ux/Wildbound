@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2k3l4m5n6o7"]
+[gd_scene load_steps=4 format=3 uid="uid://b2k3l4m5n6o7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_abc123"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1abc2"]
 size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
+radius = 50.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 1
@@ -21,3 +24,17 @@ offset_right = 16.0
 offset_bottom = 16.0
 color = Color(0.2, 0.6, 1, 1)
 z_index = 1
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitoring = true
+
+[node name="InteractionShape" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_interaction")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+limit_smoothed = true
+enabled = true

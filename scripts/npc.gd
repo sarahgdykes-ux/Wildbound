@@ -5,14 +5,28 @@ extends StaticBody2D
 signal dialogue_started
 
 @onready var label: Label = $Label
-@onready var interaction_area: Area2D = $InteractionArea
 
 var player_in_range: bool = false
 var dialogue_shown: bool = false
 
 func _ready() -> void:
-	interaction_area.body_entered.connect(_on_body_entered)
-	interaction_area.body_exited.connect(_on_body_exited)
+	# Use the NPC's own area for detection
+	var area = Area2D.new()
+	area.name = "InteractionArea"
+	area.collision_layer = 0
+	area.collision_mask = 1
+	area.monitoring = true
+	add_child(area)
+	
+	var shape = CollisionShape2D.new()
+	var circle = CircleShape2D.new()
+	circle.radius = 60.0
+	shape.shape = circle
+	area.add_child(shape)
+	
+	area.body_entered.connect(_on_body_entered)
+	area.body_exited.connect(_on_body_exited)
+	
 	label.visible = false
 
 func _on_body_entered(body: Node2D) -> void:

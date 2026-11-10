@@ -7,33 +7,30 @@ signal door_opened(building_name: String)
 signal door_closed(building_name: String)
 
 @onready var label: Label = $Label
-@onready var trigger_area: Area2D = $TriggerArea
 
-var player_in_range: bool = false
 var is_open: bool = false
 var building_name: String = "Building"
 
 func _ready() -> void:
-	trigger_area.body_entered.connect(_on_body_entered)
-	trigger_area.body_exited.connect(_on_body_exited)
 	label.visible = false
 	
 	# Set building_name from node name
 	building_name = name.replace("Door", "").replace("_", " ").capitalize()
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		player_in_range = true
-		label.visible = true
-
-func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		player_in_range = false
-		label.visible = false
+func _process(_delta: float) -> void:
+	# Check if player is nearby for label visibility
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		var distance = global_position.distance_to(player.global_position)
+		label.visible = distance < 60.0
 
 func _input(event: InputEvent) -> void:
-	if player_in_range and event.is_action_pressed("interact"):
-		interact()
+	if event.is_action_pressed("interact"):
+		var player = get_tree().get_first_node_in_group("player")
+		if player:
+			var distance = global_position.distance_to(player.global_position)
+			if distance < 60.0:
+				interact()
 
 func interact() -> void:
 	if is_open:
